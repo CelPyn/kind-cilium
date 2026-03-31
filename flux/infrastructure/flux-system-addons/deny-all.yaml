@@ -3,5 +3,5 @@ kind: CiliumNetworkPolicy
 metadata:
   name: deny-all
 spec:
-  podSelector: {}
+  endpointSelector: {}
   egress: []
