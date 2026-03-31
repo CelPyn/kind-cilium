@@ -1,9 +1,3 @@
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: no-spire
----
 apiVersion: v1
 kind: Pod
 metadata:
