@@ -5,6 +5,7 @@ resources:
   - client.tenant-a.yaml
   - client.tenant-b.yaml
   - client.tenant-c.yaml
+  - mtls-negative-test.yaml
   - namespace.yaml
   - policies.yaml
   - server.yaml
