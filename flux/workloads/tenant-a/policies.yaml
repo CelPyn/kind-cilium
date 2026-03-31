@@ -33,7 +33,7 @@ spec:
   ingress:
     - fromEndpoints:
         - matchLabels:
-            app: client-tenant-c
+            app: client-tenant-a
             io.kubernetes.pod.namespace: tenant-c
       toPorts:
         - ports:
