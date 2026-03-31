@@ -19,6 +19,7 @@ spec:
               - matchPattern: "*"
     - toFQDNs:
         - matchName: google.com
+        - matchName: www.google.com
       toPorts:
         - ports:
             - port: "443"
