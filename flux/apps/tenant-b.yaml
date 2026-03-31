@@ -13,5 +13,3 @@ spec:
   path: ./flux/workloads/tenant-b
   prune: true
   wait: true
-  dependsOn:
-    - name: tenant-b-prereqs
