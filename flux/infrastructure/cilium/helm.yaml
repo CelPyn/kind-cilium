@@ -28,6 +28,8 @@ spec:
     kubeProxyReplacement: true
     k8sServiceHost: local-control-plane
     k8sServicePort: 6443
+    envoy:
+      enabled: false
     hubble:
       relay:
         enabled: true
