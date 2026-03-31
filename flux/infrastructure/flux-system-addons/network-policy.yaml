@@ -17,7 +17,8 @@ spec:
             dns:
               - matchPattern: "*"
     - toEndpoints:
-        - {}
+        - matchLabels:
+            io.kubernetes.pod.namespace: flux-system
     - toFQDNs:
         - matchName: github.com
       toPorts:
