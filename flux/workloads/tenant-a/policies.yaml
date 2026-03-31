@@ -17,3 +17,8 @@ spec:
           rules:
             dns:
               - matchPattern: "*"
+    - toFQDNs:
+        - matchName: google.com
+      toPorts:
+        - ports:
+            - port: "443"
