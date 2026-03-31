@@ -31,8 +31,6 @@ metadata:
 spec:
   endpointSelector: {}
   ingress:
-    - authentication:
-        mode: "required"
     - fromEndpoints:
         - matchLabels:
             app: client-tenant-c

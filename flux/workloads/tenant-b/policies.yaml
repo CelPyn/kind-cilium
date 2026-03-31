@@ -18,5 +18,3 @@ spec:
           rules:
             dns:
               - matchPattern: "*"
-    - authentication:
-        mode: required

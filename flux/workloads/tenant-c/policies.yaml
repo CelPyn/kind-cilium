@@ -20,8 +20,6 @@ spec:
             dns:
               - matchPattern: "*"
   ingress:
-    - authentication:
-        mode: "required"
     - fromEndpoints:
         - matchLabels:
             app: client-tenant-b
