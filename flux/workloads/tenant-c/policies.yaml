@@ -5,6 +5,8 @@ metadata:
   name: allow-ingress-tenant-b
 spec:
   endpointSelector: {}
+  authentication:
+    mode: "required"
   ingress:
     - fromEndpoints:
         - matchLabels:
