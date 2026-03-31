@@ -4,5 +4,6 @@ metadata:
   name: allow-egress-all
 spec:
   endpointSelector: {}
-  authentication:
-    mode: "required"
+  egress:
+    - authentication:
+        mode: "required"

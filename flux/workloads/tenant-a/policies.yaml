@@ -30,9 +30,9 @@ metadata:
   name: allow-ingress-tenant-c
 spec:
   endpointSelector: {}
-  authentication:
-    mode: "required"
   ingress:
+    - authentication:
+        mode: "required"
     - fromEndpoints:
         - matchLabels:
             app: client-tenant-c
