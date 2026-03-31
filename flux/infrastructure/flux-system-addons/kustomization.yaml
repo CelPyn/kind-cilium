@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - deny-all.yaml
-  - network-policy.yaml
