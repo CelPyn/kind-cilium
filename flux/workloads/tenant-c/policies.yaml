@@ -8,6 +8,8 @@ spec:
   egress:
     - toEntities:
         - cluster
+      authentication:
+        mode: required
     - toEndpoints:
         - matchLabels:
             io.kubernetes.pod.namespace: kube-system
