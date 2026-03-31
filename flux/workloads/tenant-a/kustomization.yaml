@@ -4,3 +4,4 @@ namespace: tenant-a
 resources:
   - client.google-com.yaml
   - namespace.yaml
+  - policies.yaml
