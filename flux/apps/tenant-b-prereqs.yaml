@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: tenant-b
+  name: tenant-b-prereqs
   namespace: flux-system
 spec:
   interval: 1h
@@ -10,8 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./flux/workloads/tenant-b
+  path: ./flux/workloads/tenant-b-prereqs
   prune: true
   wait: true
-  dependsOn:
-    - name: tenant-b-prereqs
