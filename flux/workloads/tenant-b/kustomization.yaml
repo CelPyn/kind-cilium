@@ -4,7 +4,6 @@ namespace: tenant-b
 resources:
   - namespace.yaml
   - no-spire-sa.yaml
-  - mtls-negative-test.yaml
   - client.tenant-a.yaml
   - client.tenant-b.yaml
   - client.tenant-c.yaml
