@@ -4,4 +4,5 @@ metadata:
   name: deny-all
 spec:
   endpointSelector: {}
-  egress: []
+  egress:
+    - {}
