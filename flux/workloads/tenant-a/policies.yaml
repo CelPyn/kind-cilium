@@ -23,3 +23,18 @@ spec:
       toPorts:
         - ports:
             - port: "443"
+---
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-ingress-tenant-c
+spec:
+  endpointSelector: {}
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: client-tenant-c
+            io.kubernetes.pod.namespace: tenant-c
+      toPorts:
+        - ports:
+            - port: "8080"

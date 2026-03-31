@@ -35,4 +35,11 @@ spec:
         enabled: true
       ui:
         enabled: true
+    authentication:
+      enabled: true
+      mutual:
+        spire:
+          enabled: true
+          install:
+            enabled: true
 ---

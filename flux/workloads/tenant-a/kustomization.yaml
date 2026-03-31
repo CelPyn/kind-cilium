@@ -5,3 +5,4 @@ resources:
   - client.google-com.yaml
   - namespace.yaml
   - policies.yaml
+  - server.yaml

@@ -3,5 +3,8 @@ kind: Kustomization
 namespace: tenant-a
 resources:
   - client.tenant-a.yaml
+  - client.tenant-b.yaml
+  - client.tenant-c.yaml
   - namespace.yaml
   - policies.yaml
+  - server.yaml

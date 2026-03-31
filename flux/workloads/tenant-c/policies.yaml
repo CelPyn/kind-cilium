@@ -2,24 +2,15 @@
 apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
-  name: restrict-egress
+  name: allow-ingress-tenant-b
 spec:
   endpointSelector: {}
-  egress:
-    - toEndpoints:
+  ingress:
+    - fromEndpoints:
         - matchLabels:
-            io.kubernetes.pod.namespace: kube-system
-            k8s-app: kube-dns
+            app: client-tenant-b
+            io.kubernetes.pod.namespace: tenant-b
       toPorts:
         - ports:
-            - port: "53"
-              protocol: UDP
-          rules:
-            dns:
-              - matchPattern: "*"
-    - toFQDNs:
-        - matchName: google.com
-        - matchName: www.google.com
-      toPorts:
-        - ports:
-            - port: "443"
+            - port: "8080"
+
