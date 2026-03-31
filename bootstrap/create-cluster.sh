@@ -14,6 +14,16 @@ fi
 
 KUBE_CONTEXT="kind-${CLUSTER_NAME}"
 
+# Install Cilium
+helm upgrade --install cilium oci://quay.io/cilium/charts/cilium \
+  --version 1.19.2 \
+  --namespace kube-system \
+  --set kubeProxyReplacement=true \
+  --set k8sServiceHost="${CLUSTER_NAME}-control-plane" \
+  --set k8sServicePort=6443 \
+  --wait \
+  --kube-context "${KUBE_CONTEXT}"
+
 # Install the flux-operator via Helm
 helm upgrade --install flux-operator \
   oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator \
