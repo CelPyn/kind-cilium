@@ -5,6 +5,20 @@ metadata:
   name: allow-ingress-tenant-b
 spec:
   endpointSelector: {}
+  egress:
+    - toEntities:
+        - cluster
+    - toEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: kube-dns
+      toPorts:
+        - ports:
+            - port: "53"
+              protocol: UDP
+          rules:
+            dns:
+              - matchPattern: "*"
   ingress:
     - authentication:
         mode: "required"
