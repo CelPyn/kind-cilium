@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-tenant-a
+  labels:
+    app: client-tenant-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-tenant-a
+  template:
+    metadata:
+      name: client-tenant-a
+      labels:
+        app: client-tenant-a
+    spec:
+      containers:
+        - name: client
+          image: client:latest
+          imagePullPolicy: Never
+          env:
+            - name: DESTINATION
+              value: "https://server.tenant-a.svc.cluster.local:8080"
+          resources: {}
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /liveness
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            timeoutSeconds: 3
+      restartPolicy: Always
